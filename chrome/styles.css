@@ -1,0 +1,203 @@
+/* AccentFlow Extension - Styles CSS externes */
+
+.accentflow-highlight {
+    background-color: #111827 !important;
+    color: white !important;
+    border-radius: 3px;
+    padding: 0 1px;
+    display: inline;
+}
+
+.accentflow-popup {
+    position: absolute;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 999999;
+    display: none;
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.accentflow-popup-options {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.accentflow-option {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background: #f9fafb;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
+
+.accentflow-option.selected {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.accentflow-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #e5e7eb;
+}
+
+.accentflow-badge {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #6b7280;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    z-index: 999999;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.accentflow-badge.active {
+    background: #dc2626;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Animation d'apparition pour la popup */
+.accentflow-popup.show {
+    display: block;
+    animation: accentflow-fadeIn 0.2s ease-out;
+}
+
+@keyframes accentflow-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Styles pour les champs input en mode accent */
+input.accentflow-input-active,
+textarea.accentflow-input-active {
+    background-color: #111827 !important;
+    color: white !important;
+    transition: all 0.2s ease;
+}
+
+/* Amélioration visuelle pour les éléments contenteditable */
+[contenteditable].accentflow-target {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Style pour indiquer qu'AccentFlow est disponible sur un élément */
+input:focus,
+textarea:focus,
+[contenteditable]:focus {
+    position: relative;
+}
+
+/* Mini indicateur discret pour les champs compatibles */
+.accentflow-indicator {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background: #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+.accentflow-indicator::after {
+    content: 'À';
+    font-family: serif;
+}
+
+/* Responsive design pour petits écrans */
+@media (max-width: 768px) {
+    .accentflow-badge {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .accentflow-popup {
+        padding: 6px;
+    }
+    
+    .accentflow-option {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+/* Mode sombre automatique */
+@media (prefers-color-scheme: dark) {
+    .accentflow-popup {
+        background: #1f2937;
+        border-color: #374151;
+        color: white;
+    }
+    
+    .accentflow-popup::after {
+        border-top-color: #374151;
+    }
+    
+    .accentflow-option {
+        background: #374151;
+        color: #e5e7eb;
+        border-color: #4b5563;
+    }
+    
+    .accentflow-option.selected {
+        background: #3b82f6;
+        color: white;
+    }
+}

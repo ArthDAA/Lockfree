@@ -1,0 +1,13 @@
+[Unit]
+Description=AccentFlow Input Engine
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/accentflow/accentflowd --config /etc/accentflow/config.json
+Restart=on-failure
+User=accentflow
+Group=accentflow
+
+[Install]
+WantedBy=multi-user.target

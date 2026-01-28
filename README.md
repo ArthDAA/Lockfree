@@ -1,8 +1,8 @@
-# Accent Flow
+# Lock Free
 
-**Accent Flow** est une nouvelle approche des claviers multilingues.  
+**Lock Free** est une nouvelle approche des claviers multilingues.  
 Fini les combinaisons bancales pour taper des accents (`Alt+130`, `^ + e`, etc.) :  
-Accent Flow introduit une **keymap multimodale** fluide, intuitive et universelle.
+Lock Free introduit une **keymap multimodale** fluide, intuitive et universelle.
 
 ---
 

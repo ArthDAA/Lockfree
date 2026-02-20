@@ -25,7 +25,7 @@ sans changer de clavier, sans installer 15 layouts différents.
 
 ## 🛠 Démo en ligne
 
-👉 [Essayez Accent Flow ici](https://accent-flow-3c5ee4b2.base44.app)
+👉 [Essayez Lock Free ici](https://accent-flow-3c5ee4b2.base44.app)
 
 ---
 
